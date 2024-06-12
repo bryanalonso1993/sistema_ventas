@@ -2,7 +2,7 @@
 
 ### Levantar la base de datos
 
-1) Crear el directorio de la base de datos 
+1) Crear el directorio de la base de datos.
 
 ```
 bryanalonso@MacBook-Pro-de-bryan proyecto % mkdir storage_mysql
@@ -16,7 +16,7 @@ bryanalonso@MacBook-Pro-de-bryan proyecto % pwd
 /Users/bryanalonso/datapath/analisis-datos-python/proyecto
 ```
 
-2) Modificar el deploy_mysql/mysql-storage.yaml, setear el path de la base de datos
+2) Modificar el deploy_mysql/mysql-storage.yaml, setear el path de la base de datos.
 
 ```
 bryanalonso@MacBook-Pro-de-bryan proyecto % kubectl apply -f deploy_mysql/mysql-storage.yaml
@@ -32,16 +32,27 @@ bryanalonso@MacBook-Pro-de-bryan proyecto %
 ```
 
 3) Modificar el password de la base de datos en caso se requiera del archivo 
- deploy_mysql/mysql-secret.yaml
+ deploy_mysql/mysql-secret.yaml.
 
 ```
 bryanalonso@MacBook-Pro-de-bryan proyecto % kubectl apply -f deploy_mysql/mysql-secret.yaml
 secret/mysql-secret created
 ```
 
-4) Ejecutar el deployment
+4) Ejecutar el deployment.
 ```
 bryanalonso@MacBook-Pro-de-bryan proyecto % kubectl apply -f deploy_mysql/mysql-deployment.yaml
 deployment.apps/mysql created
 service/mysql created
 ```
+
+### Diagrama ER
+
+1) Diagrama OLAP (sistema de ventas) para la analítica de datos.
+
+<img title="Esquema OLAP propuesto" alt="Alt text" src="./img/Diagrama_ER.jpeg">
+
+2) El ORM debe crear las tablas en la base de datos.
+
+<img title="tablas" alt="Alt text" width="200px" height="200px" src="./img/tablas.jpeg" style="display:block;margin-left: auto; margin-right: auto; width: 50%;">
+
